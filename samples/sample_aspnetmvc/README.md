@@ -79,6 +79,64 @@ test it as documented above
 curl -I http://localhost:5000
 ```
 
+# Push the image to ICP image repo
 
+## login to docker
+```
+docker login mycluster.icp:8500
+```
+### id and password for docker repo
+```
+user:admin
+password:admin
+```
 
-# Reference
+## tag the image
+```
+docker tag aspnetmvcapp mycluster.icp:8500/jaricdev/aspnetmvcapp:1.0
+```
+
+## push the image
+```
+docker push mycluster.icp:8500/jaricdev/aspnetmvcapp:1.0
+```
+
+# Deploy the image
+Refer to [deploy custom image](https://github.ibm.com/icp-ap/Learning/blob/master/demo-with-ipad.md#demo-2-custom-docker-image)
+
+General Tab
+name | value
+-----| -----
+Name | js-dotnet-kestrelapp
+
+Container settings Tab
+name | value
+-----| -----
+Name | js-dotnet-kestrelapp
+Image | mycluster.icp:8500/jaricdev/aspnetmvcapp:1.0
+Container port | 80
+
+# Expose the deployment with Service
+Refer to [deploy custom image](https://github.ibm.com/icp-ap/Learning/blob/master/demo-with-ipad.md#demo-2-custom-docker-image)
+
+General Tab
+name | value
+-----| -----
+Name | js-dotnet-kestrelapp-service
+Type | NodePort
+
+Ports Tab
+name | value
+-----| -----
+TCP | http, 5000, 80
+
+Selectors Tab
+name | value
+-----| -----
+app | js-dotnet-kestrelapp
+
+# Access the application
+[link to the deployed application](http://192.168.64.221:31599/)
+
+# Scale the application
+Refer to [deploy custom image](https://github.ibm.com/icp-ap/Learning/blob/master/demo-with-ipad.md#demo-2-custom-docker-image)
