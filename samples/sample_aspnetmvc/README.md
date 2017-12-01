@@ -142,6 +142,7 @@ app | js-dotnet-kestrelapp
 
 # Access the application
 [link to the deployed application](http://192.168.64.221:31599/)
+![]()
 
 # Scale the application
 Refer to [deploy custom image](https://github.ibm.com/icp-ap/Learning/blob/master/demo-with-ipad.md#demo-2-custom-docker-image)
