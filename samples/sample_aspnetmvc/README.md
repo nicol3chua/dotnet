@@ -104,12 +104,12 @@ docker push mycluster.icp:8500/jaricdev/aspnetmvcapp:1.0
 # Deploy the image
 Refer to [deploy custom image](https://github.ibm.com/icp-ap/Learning/blob/master/demo-with-ipad.md#demo-2-custom-docker-image)
 
-General Tab
+General Tab<br>
 name | value
 -----| -----
 Name | js-dotnet-kestrelapp
 
-Container settings Tab
+Container settings Tab<br>
 name | value
 -----| -----
 Name | js-dotnet-kestrelapp
@@ -119,18 +119,18 @@ Container port | 80
 # Expose the deployment with Service
 Refer to [deploy custom image](https://github.ibm.com/icp-ap/Learning/blob/master/demo-with-ipad.md#demo-2-custom-docker-image)
 
-General Tab
+General Tab<br>
 name | value
 -----| -----
 Name | js-dotnet-kestrelapp-service
 Type | NodePort
 
-Ports Tab
+Ports Tab<br>
 name | value
 -----| -----
 TCP | http, 5000, 80
 
-Selectors Tab
+Selectors Tab<br>
 name | value
 -----| -----
 app | js-dotnet-kestrelapp
