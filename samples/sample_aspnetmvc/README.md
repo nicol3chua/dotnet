@@ -83,7 +83,7 @@ curl -I http://localhost:5000
 
 ## login to docker
 ```
-docker login mycluster.icp:8500
+docker login prd.icp:8500
 ```
 ### id and password for docker repo
 ```
@@ -93,12 +93,12 @@ password:admin
 
 ## tag the image
 ```
-docker tag aspnetmvcapp mycluster.icp:8500/jaricdev/aspnetmvcapp:1.0
+docker tag aspnetmvcapp prd.icp:8500/dev/aspnetmvcapp:1.0
 ```
 
 ## push the image
 ```
-docker push mycluster.icp:8500/jaricdev/aspnetmvcapp:1.0
+docker push prd.icp:8500/dev/aspnetmvcapp:1.0
 ```
 
 # Deploy the image
@@ -115,7 +115,8 @@ Container settings Tab
 name | value
 -----| -----
 Name | js-dotnet-kestrelapp
-Image | mycluster.icp:8500/jaricdev/aspnetmvcapp:1.0
+Image | prd.icp:8500/dev/aspnetmvcapp:1.0
+Image Pull Secrets | registry-secret
 Container port | 80
 
 # Expose the deployment with Service
@@ -141,11 +142,19 @@ name | value
 app | js-dotnet-kestrelapp
 
 # Access the application
-[link to the deployed application](http://192.168.64.221:31599/)
+[link to the deployed application](http://192.168.64.221:31798/)
 ![app](https://github.ibm.com/icp-ap/dotnet/blob/master/images/app.png)
 
 # Scale the application
 Refer to [deploy custom image](https://github.ibm.com/icp-ap/Learning/blob/master/demo-with-ipad.md#demo-2-custom-docker-image)
+
+# Demo Script
+1. Create Deployment Video
+2. Create Service Video
+3. Update Deployment Video
+4. Rollback app video
+4. Scale Up Video
+5. Self healing Video
 
 # Create Helm charset
 **todo**
