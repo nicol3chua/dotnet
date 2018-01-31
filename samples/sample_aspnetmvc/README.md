@@ -101,6 +101,33 @@ docker tag aspnetmvcapp prd.icp:8500/dev/aspnetmvcapp:1.0
 docker push prd.icp:8500/dev/aspnetmvcapp:1.0
 ```
 
+## edit the application home page
+edit the codes in https://github.ibm.com/icp-ap/dotnet/blob/master/samples/sample_aspnetmvc/sample_aspnetmvc.app/Views/Home/Index.cshtml
+
+change the following
+```
+<font color="red">1.0</font>
+```
+to
+```
+<font color="red">1.1</font>
+```
+
+## Re-build application
+```
+docker build . -t aspnetmvcapp
+```
+
+## Re-tag with new version
+```
+docker tag aspnetmvcapp prd.icp:8500/dev/aspnetmvcapp:1.1
+```
+
+## Push new version
+```
+docker push prd.icp:8500/dev/aspnetmvcapp:1.1
+```
+
 # Deploy the image
 Refer to [deploy custom image](https://github.ibm.com/icp-ap/Learning/blob/master/demo-with-ipad.md#demo-2-custom-docker-image)
 
